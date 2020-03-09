@@ -34,7 +34,7 @@ const SummaryRow: React.FunctionComponent<SummaryRowProps> = ({title, value, alt
             <td>{title}</td>
             <td>{formatNumber(value)}</td>
             <td>{formatNumber(altValue)}</td>
-            <td style={diff >= 0 ? {color: "green"} : {color: "red"}}>{formatNumber(altValue)}</td>
+            <td style={diff >= 0 ? {color: "green"} : {color: "red"}}>{formatNumber(diff)}</td>
         </tr>
     )
 }
