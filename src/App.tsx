@@ -73,7 +73,7 @@ function App() {
           percent_wager = (prob_win * payout_perc - (1 - prob_win)) / payout_perc
         </code>
         <br/><br/>
-        Put in some numbers below and run simulations.
+        Put in some numbers below and run simulations or <a href="https://www.github.com/breeko/kelly-criterion">see source</a>
       </div>
       <Divider/>
       <ButtonGroup minimal>
