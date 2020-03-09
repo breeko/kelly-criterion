@@ -1,6 +1,5 @@
 import React from "react"
 import SummaryRow from "./SummaryRow"
-import { populationBuckets } from "../bucketNumbers"
 
 interface SummaryTableProps {
     results: Summary

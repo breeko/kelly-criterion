@@ -8,8 +8,8 @@ export const play = (props: PlayProps) => {
     const results = Array.from({length: numGames}).map(() => {
         const rnd = Array.from({length: numSteps}, () => Math.random())
     
-        let cur = [bankroll]
         let lastBal = bankroll
+        let cur = [lastBal]
         rnd.forEach(r => {
             const actualWager = Math.min(Math.max(minWager, lastBal * (wager / 100)), lastBal)
             const newBal = percProbWin > r ? lastBal + (actualWager * winPayout) : lastBal - actualWager

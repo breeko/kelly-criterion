@@ -35,7 +35,7 @@ function App() {
       && numSteps > 0
       && numGames > 0
     setCanPlay(valid)
-  }, [wager, minWager, fixedWager])
+  }, [probWin, winPayout, wager, minWager, numSteps, numGames, fixedWager])
 
   const runGame = () => {
     if (minWager !== undefined) {
@@ -56,7 +56,7 @@ function App() {
   }
 
   const randomize = () => {
-    const newProbWin = randBetween(50, 100)
+    const newProbWin = randBetween(50, 60)
     const newWinPayout = randBetween(50, 200) / 100.0
     setProbWin(newProbWin)
     setWinPayout(newWinPayout)
@@ -66,10 +66,14 @@ function App() {
     <div className="App bp3-dark">
       <h1 className="bp3-heading">Kelly Criterion</h1>
       <div className=".modifier">
-        More than a decade ago, we set out to create products that would transform
-        the way organizations use their data. Today, our products are deployed at
-        the most critical government, commercial, and non-profit institutions in
-        the world to solve problems we hadn’t even dreamed of back then.
+        Kelly Criterion is a formula to determine the optimal bet size depending on your
+        odds and probability of winning. It's equal to
+        <br/><br/>
+        <code>
+          percent_wager = (prob_win * payout_perc - (1 - prob_win)) / payout_perc
+        </code>
+        <br/><br/>
+        Put in some numbers below and run simulations.
       </div>
       <Divider/>
       <ButtonGroup minimal>
